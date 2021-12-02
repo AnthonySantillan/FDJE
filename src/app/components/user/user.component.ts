@@ -21,6 +21,7 @@ export class UserComponent implements OnInit {
   Updated: boolean = false;
   UserForm: FormGroup;
   selectedUsers: UserModel[] = [];
+  nombre: string;
   // se cargan las dependencias y se inicializa el formulario
   constructor(
     private router: Router,
@@ -197,5 +198,15 @@ export class UserComponent implements OnInit {
     return this.UserForm.controls['phone'];
   }
 
+  Search() {
+    if (this.nombre != "") {
+      this.Users = this.Users.filter(res => {
+        return res.name.toLocaleLowerCase().match(this.nombre.toLocaleLowerCase());
+      });
+    } else if (this.nombre == "") {
+      this.ngOnInit();
+    }
+
+  }
 
 }

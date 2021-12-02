@@ -3,6 +3,9 @@ import { MessageService } from '../../services/messages/message.service';
 import { PaperService } from '../../services/papers.service';
 
 import { PaperModel } from '../../models/paper/paper.model';
+import { UsersService } from 'src/app/services/users.service';
+
+import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'app-data',
@@ -13,14 +16,31 @@ export class DataComponent implements OnInit {
 
   paper: PaperModel = {};
   papers: PaperModel[] = [];
+  date: string;
+  user: string;
+  /*name of the excel-file which will be downloaded. */
+  fileName = 'ExcelSheet.xlsx';
   ngOnInit() {
     this.getPapers();
-
   }
   constructor(
     private PaperService: PaperService,
     private MessageService: MessageService,
   ) { }
+  exportexcel(): void {
+    /* table id is passed over here */
+    let element = document.getElementById('export');
+    const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
+
+    /* generate workbook and add the worksheet */
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+
+    /* save to file */
+    XLSX.writeFile(wb, this.fileName);
+
+  }
+
   // obtiene un registro de la base de datos
   getPaper(Paper: PaperModel) {
     this.PaperService.getOne(Paper.id).subscribe(
@@ -45,5 +65,25 @@ export class DataComponent implements OnInit {
         this.MessageService.error(error);
       }
     );
+  }
+  Search() {
+    if (this.date != "") {
+      this.papers = this.papers.filter(res => {
+        return res.dia.toLocaleLowerCase().match(this.date.toLocaleLowerCase());
+      });
+    } else if (this.date == "") {
+      this.ngOnInit();
+    }
+
+  }
+  SearchUser() {
+    if (this.user != "") {
+      this.papers = this.papers.filter(res => {
+        return res.user_id.dni.toLocaleLowerCase(this.user.toLocaleLowerCase());
+      });
+    } else if (this.user == "") {
+      this.ngOnInit();
+    }
+
   }
 }

@@ -142,19 +142,29 @@
     <div class="col-md-4">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Registros creados</h4>
+                <h4 class="card-title">Ultimo registro</h4>
+            </div>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                El ultimo dato que se registro esta de color verde
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="card-body">
                 <table class="table ">
                     <tr>
-
+                        <th>id</th>
                         <th>Fecha</th>
                         <th>Correcciones totales</th>
 
                         <th width="220px">Action</th>
 
                     </tr>
-                    <tr *ngFor="let paper of papers">
+                    <!-- <tr *ngFor="let paper of papers " ng-class="!$last ? 'other' : 'class-for-last'"> -->
+                    <tr *ngFor="let paper of papers;let primero = first;let ultimo = last;"
+                        [ngClass]="{azul:primero,verde:ultimo}">
+
+                        <td>{{paper.id}}</td>
                         <td>{{paper.dia}}</td>
                         <td>{{paper.correcion_total}}</td>
 
@@ -162,6 +172,7 @@
                             <button type="button" (click)=selectPaper(paper)
                                 class="btn btn-sm btn-outline-success btn-round btn-icon"><i
                                     class="fas fa-edit"></i></button>
+
 
                         </td>
                     </tr>

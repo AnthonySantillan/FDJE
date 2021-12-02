@@ -11,6 +11,7 @@ import { UserModel } from '../../models/user/user.model';
   templateUrl: './paper.component.html',
   styleUrls: ['./paper.component.css']
 })
+
 export class PaperComponent implements OnInit {
 
   // variables que guardan los datos recuperados de la BD e instacian el formulario
@@ -65,9 +66,20 @@ export class PaperComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPapers();
+    // this.getUser();
+    this.getItem();
     //this.getPaper();
-  }
 
+
+
+  }
+  getItem() {
+    return this.getLastArrItem;
+  }
+  getLastArrItem = (papers) => {
+    let lastItem = papers[papers.length - 1];
+    console.log(`Last element is ${lastItem}`);
+  }
   // obtiene un registro de la base de datos
   getPaper(Paper: PaperModel) {
     this.PaperService.getOne(Paper.id).subscribe(
@@ -79,6 +91,17 @@ export class PaperComponent implements OnInit {
       }
     );
   }
+  // getUser() {
+  //   this.PaperService.getpaper(this.user.user.id).subscribe(
+  //     response => {
+  //       // console.log(response);
+  //       this.paper = response
+  //     }
+  //     , error => {
+  //       this.MessageService.error(error);
+  //     }
+  //   )
+  // }
   // obtiene todos los registro de la base de datos
   getPapers() {
     this.PaperService.getAll().subscribe(
@@ -124,19 +147,19 @@ export class PaperComponent implements OnInit {
       }
     );
   }
-  //elimina un registro de la base de datos
-  // deletePaper(paper: PaperModel) {
-  //   this.PaperService.destroy(paper.id).subscribe(
-  //     response => {
-  //       console.log(response);
-  //       this.removePaper(paper);
-  //       this.MessageService.success(response);
-  //     },
-  //     error => {
-  //       this.MessageService.error(error)
-  //     }
-  //   );
-  // }
+  // elimina un registro de la base de datos
+  deletePaper(paper: PaperModel) {
+    this.PaperService.destroy(paper.id).subscribe(
+      response => {
+        console.log(response);
+        this.removePaper(paper);
+        this.MessageService.success(response);
+      },
+      error => {
+        this.MessageService.error(error)
+      }
+    );
+  }
   //elimina varios registro de la base de datos
   // TODO: ELIMINAR VARIOS REGISTROS
   // deletePapers() {
@@ -160,9 +183,9 @@ export class PaperComponent implements OnInit {
   //elimina visualmente un registro de la pantalla
 
 
-  //removePaper(Paper: PaperModel) {
-  //this.paper = this.paper.filter(element => element.id !== Paper.id);
-  //}
+  removePaper(Paper: PaperModel) {
+    this.papers = this.papers.filter(element => element.id !== Paper.id);
+  }
 
   //elimina visualmente varios registros de la pantalla
   // removePapers(ids: (number | undefined)[]) {

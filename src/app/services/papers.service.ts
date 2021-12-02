@@ -17,6 +17,13 @@ export class PaperService {
   constructor(private httpClient: HttpClient) {
 
   }
+  getpaper(user_id: number): Observable<PaperModel> {
+    const url = `${this.API_URL}/papers/${user_id}`;
+    return this.httpClient.get<PaperModel>(url).pipe(
+      map(response => response),
+      catchError(Handler.render)
+    );
+  }
   //metodos para recuperar datos del  backend
   getAll(): Observable<ServerResponse> {
     const url: string = `${this.API_URL}/papers`;

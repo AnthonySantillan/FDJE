@@ -61,12 +61,19 @@
       <div class="card-header">
         <h4 class="card-title">Listado de usuarios</h4>
       </div>
+      <nav class="navbar navbar-light bg-light">
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" [(ngModel)]="nombre" [ngModelOptions]="{standalone: true}" type="search"
+            placeholder="Search" aria-label="Search" (input)="Search()">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)=Search()>Search</button>
+        </form>
+      </nav>
       <div class="card-body">
 
 
         <table class="table ">
           <tr>
-
+            <th>Id</th>
             <th>Nombre</th>
             <th>Telefono</th>
 
@@ -74,6 +81,7 @@
 
           </tr>
           <tr *ngFor="let user of Users">
+            <td>{{user.id}}</td>
             <td>{{user.name}}</td>
             <td>{{user.phone}}</td>
 

@@ -22,6 +22,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AuthGuard } from "./guards/auth.guard";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { MatTableModule } from '@angular/material/table';
+import { MatTableExporterModule } from 'mat-table-exporter';
 
 
 
@@ -53,6 +55,8 @@ import { CommonModule } from '@angular/common';
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
+    MatTableModule,
+    MatTableExporterModule
   ],
   providers: [
     AuthGuard,
