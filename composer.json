@@ -8,10 +8,19 @@
         "php": "^7.3|^8.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+<<<<<<< HEAD
         "laravel/framework": "^8.65",
         "laravel/sanctum": "^2.12",
         "laravel/tinker": "^2.5",
         "spatie/laravel-permission": "^5.4"
+=======
+        "infyomlabs/laravel-ui-stisla": "^3.1",
+        "laravel/framework": "^8.65",
+        "laravel/sanctum": "^2.11",
+        "laravel/tinker": "^2.5",
+        "laravelcollective/html": "^6.2",
+        "spatie/laravel-permission": "^5.3"
+>>>>>>> a04c7a109e7ec05a862865ae8ea1074626bbbf0e
     },
     "require-dev": {
         "facade/ignition": "^2.5",

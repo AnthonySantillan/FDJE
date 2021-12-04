@@ -60,6 +60,7 @@ class RouteServiceProvider extends ServiceProvider
             return Limit::perMinute(60)->by(optional($request->user())->id ?: $request->ip());
         });
     }
+<<<<<<< HEAD
 
     // protected function mapApiRoutes()
     // {
@@ -76,4 +77,6 @@ class RouteServiceProvider extends ServiceProvider
     //         ->middleware(['api', 'auth:sanctum'])
     //         ->group(base_path("routes/api/${version}/authentication.php"));
     // }
+=======
+>>>>>>> a04c7a109e7ec05a862865ae8ea1074626bbbf0e
 }

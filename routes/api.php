@@ -2,12 +2,15 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+<<<<<<< HEAD
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PaperController;
 use App\Http\Controllers\RoleController;
+=======
+>>>>>>> a04c7a109e7ec05a862865ae8ea1074626bbbf0e
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +23,7 @@ use App\Http\Controllers\RoleController;
 |
 */
 
+<<<<<<< HEAD
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
@@ -83,3 +87,8 @@ Route::get('init', function () {
 // Route::prefix('user')->group(function () {
 //     Route::patch('{user}', [UserController::class, 'destroy']);
 // });
+=======
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});
+>>>>>>> a04c7a109e7ec05a862865ae8ea1074626bbbf0e
