@@ -7,10 +7,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-<<<<<<< HEAD
-=======
-
->>>>>>> a04c7a109e7ec05a862865ae8ea1074626bbbf0e
 //spati
 use Spatie\Permission\Traits\HasRoles;
 
@@ -25,13 +21,8 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
-<<<<<<< HEAD
         'dni',
         'name',
-=======
-        'name',
-        'ci',
->>>>>>> a04c7a109e7ec05a862865ae8ea1074626bbbf0e
         'phone',
         'password',
     ];
@@ -52,15 +43,10 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-<<<<<<< HEAD
         'email_verified_at' => 'datetime',
     ];
     function papers()
     {
         return $this->hasMany(Paper::class);
     }
-=======
-        'ci_verified_at' => 'datetime',
-    ];
->>>>>>> a04c7a109e7ec05a862865ae8ea1074626bbbf0e
 }

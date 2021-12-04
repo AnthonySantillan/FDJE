@@ -40,11 +40,7 @@ class Kernel extends HttpKernel
         ],
 
         'api' => [
-<<<<<<< HEAD
             \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
-=======
-            // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
->>>>>>> a04c7a109e7ec05a862865ae8ea1074626bbbf0e
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
@@ -68,10 +64,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         //spatie
-<<<<<<< HEAD
         'verify_user_blocked' => \App\Http\Middleware\VerifyUserBlocked::class,
-=======
->>>>>>> a04c7a109e7ec05a862865ae8ea1074626bbbf0e
         'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
         'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
         'role_or_permission' => \Spatie\Permission\Middlewares\RoleOrPermissionMiddleware::class,

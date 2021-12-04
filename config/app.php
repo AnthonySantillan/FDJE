@@ -162,18 +162,11 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
-<<<<<<< HEAD
 
         /*
          * Package Service Providers...
          */
         Spatie\Permission\PermissionServiceProvider::class,
-=======
-        /*
-         * Package Service Providers...
-         */
-
->>>>>>> a04c7a109e7ec05a862865ae8ea1074626bbbf0e
         /*
          * Application Service Providers...
          */
@@ -182,14 +175,9 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-<<<<<<< HEAD
         Laravel\Sanctum\SanctumServiceProvider::class,
 
         //permission
-=======
-
-        //spati
->>>>>>> a04c7a109e7ec05a862865ae8ea1074626bbbf0e
         Spatie\Permission\PermissionServiceProvider::class,
 
     ],
