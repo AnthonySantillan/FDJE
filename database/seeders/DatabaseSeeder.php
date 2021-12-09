@@ -18,10 +18,10 @@ class DatabaseSeeder extends Seeder
             RolSeeder::class
         ]);
         User::create([
-            'dni' => '1754052718',
-            'name' => 'Anthony Santillan',
-            'phone' => '0987295505',
-            'password' => bcrypt('123456789')
+            'dni' => '1713177655 ',
+            'name' => 'Fabian Romero',
+            'phone' => '0992927892',
+            'password' => bcrypt('GsFdjE@2021.12')
 
         ])->assignRole('Admin');
     }

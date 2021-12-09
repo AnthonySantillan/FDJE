@@ -50,8 +50,9 @@ class PaperController extends Controller
                 'papers.nph_lantus_md',
 
                 'papers.dormir',
-                'papers.madrugada',
                 'papers.correcion_total',
+                'papers.observaciones',
+
             )
             ->get();
         return response()->json(
@@ -95,8 +96,9 @@ class PaperController extends Controller
         $papers->nph_lantus_md = $request->input('nph_lantus_md');
 
         $papers->dormir = $request->input('dormir');
-        $papers->madrugada = $request->input('madrugada');
         $papers->correcion_total = $request->input('correcion_total');
+        $papers->observaciones = $request->input('observaciones');
+
 
 
 
@@ -197,9 +199,10 @@ class PaperController extends Controller
         $papers->rapida_ultra_rap_md = $request->input('rapida_ultra_rap_md');
         $papers->nph_lantus_md = $request->input('nph_lantus_md');
 
+    
         $papers->dormir = $request->input('dormir');
-        $papers->madrugada = $request->input('madrugada');
         $papers->correcion_total = $request->input('correcion_total');
+        $papers->observaciones = $request->input('observaciones');
 
 
 

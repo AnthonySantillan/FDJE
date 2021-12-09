@@ -72,8 +72,9 @@ class UpdatePaperRequest extends FormRequest
             'nph_lantus_md' =>  'nph_lantus_md',
 
             'dormir' =>  'dormir',
-            'madrugada' => 'madrugada',
             'correcion_total' =>  'correcion_total',
+            'observaciones' => 'observaciones',
+
         ];
     }
 }

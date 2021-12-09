@@ -38,8 +38,9 @@ class CreatePapersTable extends Migration
             $table->text('nph_lantus_md');
 
             $table->text('dormir');
-            $table->text('madrugada');
             $table->text('correcion_total');
+            $table->text('observaciones');
+
 
 
 

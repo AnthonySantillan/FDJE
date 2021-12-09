@@ -32,8 +32,8 @@ class Paper extends Model
         'nph_lantus_md',
 
         'dormir',
-        'madrugada',
         'correcion_total',
+        'observaciones',
 
 
     ];
